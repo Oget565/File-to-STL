@@ -2,13 +2,14 @@ import numpy as np
 
 from ConvertToSTL import ConvertToSTL
 
-to = ConvertToSTL("fileok")
-print(to.verifytest())
+buildplate = 225, 225 #width * lenght
 
 originalFile = input("Enter your file path: ")
-numbers = np.fromfile(originalFile, dtype=np.uint8)
 
-print("Total numbers in file:", numbers.size)
+to = ConvertToSTL(originalFile, buildplate)
+to.converttostl()
 
-np.set_printoptions(threshold=np.inf)
-print(numbers)
+#numbers = np.fromfile(originalFile, dtype=np.uint8)
+#print("Total numbers in file:", numbers.size)
+#np.set_printoptions(threshold=np.inf)
+#print(numbers)
